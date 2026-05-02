@@ -324,7 +324,7 @@ function About({ D, t, L }: { D: D; t: T; L: Loc }) {
             </Reveal>
             <Reveal className="stat" delay={140}>
               <div className="stat-num gradient-text">6</div>
-              <div className="stat-label">{L({ fr: "projets livrés", en: "shipped projects" })}</div>
+              <div className="stat-label">{L({ fr: "projets réalisés", en: "completed projects" })}</div>
             </Reveal>
             <Reveal className="stat" delay={200}>
               <div className="stat-num gradient-text">3</div>
