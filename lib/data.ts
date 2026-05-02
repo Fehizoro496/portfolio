@@ -8,8 +8,8 @@ export const PORTFOLIO_DATA: PortfolioData = {
     stack: "Flutter · JavaScript · Next.js",
     location: "Antananarivo, Madagascar",
     tagline: {
-      fr: "Je conçois des applications mobiles cross-platform en Flutter — du prototype à la production.",
-      en: "I build cross-platform mobile apps with Flutter — from prototype to production.",
+      fr: "Je conçois des applications mobiles cross-platform en Flutter - du prototype à la production.",
+      en: "I build cross-platform mobile apps with Flutter - from prototype to production.",
     },
     availability: {
       fr: "Disponible pour des missions Flutter ambitieuses",
@@ -28,7 +28,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
   },
   about: {
     fr: "Développeur passionné par le mobile et le web, j'ai consolidé mes compétences à travers des stages en entreprise, un poste de développeur mobile et plusieurs projets personnels. Aujourd'hui spécialisé en Flutter, je m'investis pleinement dans chaque projet avec l'envie de progresser et de contribuer efficacement au travail d'équipe.",
-    en: "Developer passionate about mobile and web engineering, I sharpened my skills through company internships, a full-time mobile developer role, and several personal projects. Now specialized in Flutter, I invest fully in every project — eager to grow and contribute meaningfully to the team.",
+    en: "Developer passionate about mobile and web engineering, I sharpened my skills through company internships, a full-time mobile developer role, and several personal projects. Now specialized in Flutter, I invest fully in every project - eager to grow and contribute meaningfully to the team.",
   },
   skills: [
     {
@@ -60,7 +60,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
     {
       title: { fr: "Lead Développeur Flutter", en: "Lead Flutter Developer" },
       company: "Victus",
-      period: { fr: "Avr. 2026 — Présent", en: "Apr 2026 — Present" },
+      period: { fr: "Avr. 2026 - Présent", en: "Apr 2026 - Present" },
       current: true,
       description: {
         fr: "Promotion au poste de Lead, avec la responsabilité de l'architecture Flutter et de l'encadrement technique de l'équipe mobile.",
@@ -83,7 +83,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
     {
       title: { fr: "Développeur Mobile", en: "Mobile Developer" },
       company: "Victus",
-      period: { fr: "Nov. 2025 — Mars 2026", en: "Nov 2025 — Mar 2026" },
+      period: { fr: "Nov. 2025 - Mars 2026", en: "Nov 2025 - Mar 2026" },
       current: false,
       description: {
         fr: "Conception et développement d'applications mobiles cross-platform en Flutter, du prototype à la mise en production, en collaboration étroite avec les équipes design et backend.",
@@ -104,9 +104,9 @@ export const PORTFOLIO_DATA: PortfolioData = {
       stack: ["Flutter", "Dart", "REST"],
     },
     {
-      title: { fr: "Développeur Next.js / Flutter — Stage", en: "Next.js / Flutter Developer — Internship" },
+      title: { fr: "Développeur Next.js / Flutter - Stage", en: "Next.js / Flutter Developer - Internship" },
       company: "Nexitia Technologies",
-      period: { fr: "Mai 2025 — Sept. 2025", en: "May 2025 — Sep 2025" },
+      period: { fr: "Mai 2025 - Sept. 2025", en: "May 2025 - Sep 2025" },
       description: {
         fr: "Participation à plusieurs projets clients durant le stage, sur le mobile comme sur le web.",
         en: "Contributed to several client projects during the internship, both mobile and web.",
@@ -126,9 +126,9 @@ export const PORTFOLIO_DATA: PortfolioData = {
       stack: ["Next.js", "React", "Flutter"],
     },
     {
-      title: { fr: "Développeur Flutter / Python — Stage", en: "Flutter / Python Developer — Internship" },
+      title: { fr: "Développeur Flutter / Python - Stage", en: "Flutter / Python Developer - Internship" },
       company: "Caisse d'Épargne de Madagascar",
-      period: { fr: "Juil. 2022 — Oct. 2022", en: "Jul 2022 — Oct 2022" },
+      period: { fr: "Juil. 2022 - Oct. 2022", en: "Jul 2022 - Oct 2022" },
       description: {
         fr: "Collaboration en binôme pour la conception et la mise en œuvre d'un ETL de migration de données Oracle vers PostgreSQL.",
         en: "Pair-collaboration on the design and implementation of an ETL pipeline migrating data from Oracle to PostgreSQL.",
@@ -267,7 +267,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       },
       pending: true,
       school: "Institut Supérieur Polytechnique de Madagascar (ISPM)",
-      period: "2022 — 2023",
+      period: "2022 - 2023",
     },
     {
       degree: {
@@ -276,7 +276,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       },
       pending: false,
       school: "Institut Supérieur Polytechnique de Madagascar (ISPM)",
-      period: "2020 — 2021",
+      period: "2020 - 2021",
     },
   ],
   github: {

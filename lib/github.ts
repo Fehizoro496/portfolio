@@ -34,7 +34,7 @@ export async function fetchGitHubStats(username: string): Promise<GitHubStats> {
   const user = await userRes.json();
   const publicRepos: number = user.public_repos ?? 0;
 
-  // 2. Repos — count stars + aggregate languages
+  // 2. Repos - count stars + aggregate languages
   const reposRes = await fetch(
     `https://api.github.com/users/${username}/repos?per_page=100&sort=updated`,
     { headers, next: { revalidate: 86400 } }
@@ -56,7 +56,7 @@ export async function fetchGitHubStats(username: string): Promise<GitHubStats> {
       color: LANG_COLORS[name] ?? LANG_COLORS["Other"],
     }));
 
-  // 3. Contribution grid — parse GitHub's contributions page HTML
+  // 3. Contribution grid - parse GitHub's contributions page HTML
   const contribRes = await fetch(
     `https://github.com/users/${username}/contributions`,
     {

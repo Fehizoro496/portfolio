@@ -19,14 +19,14 @@ function useLocalStorage<T>(key: string, initial: T): [T, (v: T) => void] {
     try {
       const raw = localStorage.getItem(key);
       if (raw != null) setV(JSON.parse(raw) as T);
-    } catch {}
+    } catch { }
   }, [key]);
   const set = React.useCallback(
     (next: T) => {
       setV(next);
       try {
         localStorage.setItem(key, JSON.stringify(next));
-      } catch {}
+      } catch { }
     },
     [key]
   );
@@ -291,8 +291,8 @@ function About({ D, t, L }: { D: D; t: T; L: Loc }) {
           </Reveal>
           <div className="about-stats">
             <Reveal className="stat" delay={80}>
-              <div className="stat-num gradient-text">3+</div>
-              <div className="stat-label">{L({ fr: "années d'expérience", en: "years of experience" })}</div>
+              <div className="stat-num gradient-text">1</div>
+              <div className="stat-label">{L({ fr: "an d'expérience", en: "year of experience" })}</div>
             </Reveal>
             <Reveal className="stat" delay={140}>
               <div className="stat-num gradient-text">6</div>
@@ -450,7 +450,7 @@ function Projects({ D, t, L, cardStyle }: { D: D; t: T; L: Loc; cardStyle: CardS
   );
 }
 
-const MONTH_NAMES = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const MONTH_NAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const DAY_LABELS = ["", "Mon", "", "Wed", "", "Fri", ""];
 const LEVEL_OPACITIES = [0, 0.22, 0.42, 0.65, 1] as const;
 
@@ -559,8 +559,8 @@ function GitHubBlock({ D, t, githubStats }: { D: D; t: T; githubStats: GitHubSta
                           lvl === 0
                             ? { background: "var(--surface-2)" }
                             : lvl === 4
-                            ? { background: "var(--primary)" }
-                            : { background: `rgba(var(--glow), ${LEVEL_OPACITIES[lvl]})` }
+                              ? { background: "var(--primary)" }
+                              : { background: `rgba(var(--glow), ${LEVEL_OPACITIES[lvl]})` }
                         }
                       />
                     ))}
@@ -611,7 +611,7 @@ function Education({ D, t, L }: { D: D; t: T; L: Loc }) {
 function Contact({ D, t, L }: { D: D; t: T; L: Loc }) {
   const [copied, setCopied] = React.useState(false);
   const onCopy = () => {
-    navigator.clipboard.writeText(D.contact.email).catch(() => {});
+    navigator.clipboard.writeText(D.contact.email).catch(() => { });
     setCopied(true);
     window.setTimeout(() => setCopied(false), 1600);
   };
@@ -635,7 +635,7 @@ function Contact({ D, t, L }: { D: D; t: T; L: Loc }) {
             <p className="contact-sub">
               {L({
                 fr: "Écrivez-moi : je réponds rapidement aux opportunités Flutter, Next.js et fullstack.",
-                en: "Drop me a line — I reply quickly to Flutter, Next.js and fullstack opportunities.",
+                en: "Drop me a line - I reply quickly to Flutter, Next.js and fullstack opportunities.",
               })}
             </p>
             <div className="contact-ctas">

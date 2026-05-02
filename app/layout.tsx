@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Fehizoro Andriantsarafara — Mobile Developer",
+  title: "Fehizoro Andriantsarafara - Mobile Developer",
   description:
-    "Portfolio de Fehizoro Andriantsarafara — Développeur Mobile Flutter & Next.js basé à Antananarivo.",
+    "Portfolio de Fehizoro Andriantsarafara - Développeur Mobile Flutter & Next.js basé à Antananarivo.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

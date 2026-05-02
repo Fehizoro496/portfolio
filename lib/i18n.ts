@@ -24,7 +24,7 @@ export const I18N = {
       scroll: "Faites défiler",
     },
     sections: {
-      about: { tag: "À propos", title: "Quelques mots", lead: "Qui je suis." },
+      about: { tag: "À propos", title: "Quelques mots", lead: "Qui suis-je?" },
       skills: { tag: "Compétences", title: "Stack & savoir-faire", lead: "Les outils avec lesquels je construis." },
       experience: { tag: "Expérience", title: "Parcours professionnel", lead: "Là où j'ai contribué." },
       projects: { tag: "Projets", title: "Sélection de projets", lead: "Ce que j'ai conçu et livré." },
@@ -84,7 +84,7 @@ export const I18N = {
       scroll: "Scroll",
     },
     sections: {
-      about: { tag: "About", title: "A few words", lead: "Who I am." },
+      about: { tag: "About", title: "A few words", lead: "Who am I?" },
       skills: { tag: "Skills", title: "Stack & craft", lead: "The tools I build with." },
       experience: { tag: "Experience", title: "Professional journey", lead: "Where I contributed." },
       projects: { tag: "Projects", title: "Selected projects", lead: "What I designed and shipped." },
