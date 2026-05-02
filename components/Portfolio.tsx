@@ -330,7 +330,7 @@ function About({ D, t, L }: { D: D; t: T; L: Loc }) {
             </Reveal>
             <Reveal className="stat" delay={200}>
               <div className="stat-num gradient-text">3</div>
-              <div className="stat-label">{L({ fr: "langues parlées", en: "spoken languages" })}</div>
+              <div className="stat-label">{L({ fr: "entreprises & stages", en: "companies & internships" })}</div>
             </Reveal>
           </div>
         </div>
@@ -372,22 +372,6 @@ function Skills({ D, t, L, lang }: { D: D; t: T; L: Loc; lang: Lang }) {
                 <span key={s} className="chip">
                   {s}
                 </span>
-              ))}
-            </div>
-          </Reveal>
-          <Reveal className="soft-block" delay={120}>
-            <div className="soft-label">{t.labels.languages}</div>
-            <div className="lang-tags">
-              {D.languages.map((l, i) => (
-                <div key={i} className="lang-row">
-                  <span className="lang-name">{L(l.name)}</span>
-                  <span className="lang-dots">
-                    {Array.from({ length: 5 }).map((_, j) => (
-                      <span key={j} className={`lang-dot ${j < l.dots ? "is-on" : ""}`} />
-                    ))}
-                  </span>
-                  <span className="lang-level">{L(l.level)}</span>
-                </div>
               ))}
             </div>
           </Reveal>

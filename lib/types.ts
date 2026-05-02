@@ -59,7 +59,6 @@ export interface PortfolioData {
   about: Localized;
   skills: SkillCategory[];
   softSkills: Localized<string[]>;
-  languages: { name: Localized; level: Localized; dots: number }[];
   experience: Experience[];
   projects: Project[];
   education: Education[];

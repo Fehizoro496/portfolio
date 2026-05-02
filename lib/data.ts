@@ -56,17 +56,35 @@ export const PORTFOLIO_DATA: PortfolioData = {
     fr: ["Sérieux", "Adaptable", "Débrouillard", "Persévérant"],
     en: ["Reliable", "Adaptable", "Resourceful", "Persistent"],
   },
-  languages: [
-    { name: { fr: "Malgache", en: "Malagasy" }, level: { fr: "Natif", en: "Native" }, dots: 5 },
-    { name: { fr: "Français", en: "French" }, level: { fr: "Courant", en: "Fluent" }, dots: 5 },
-    { name: { fr: "Anglais", en: "English" }, level: { fr: "Professionnel", en: "Professional" }, dots: 4 },
-  ],
   experience: [
+    {
+      title: { fr: "Lead Développeur Flutter", en: "Lead Flutter Developer" },
+      company: "Victus",
+      period: { fr: "Avr. 2026 — Présent", en: "Apr 2026 — Present" },
+      current: true,
+      description: {
+        fr: "Promotion au poste de Lead, avec la responsabilité de l'architecture Flutter et de l'encadrement technique de l'équipe mobile.",
+        en: "Promoted to Lead role, taking ownership of the Flutter architecture and technical mentoring of the mobile team.",
+      },
+      bullets: {
+        fr: [
+          "Définition et mise en place de l'architecture Flutter (state management, navigation, persistence)",
+          "Encadrement technique et revue de code de l'équipe mobile",
+          "Pilotage des choix technologiques et bonnes pratiques",
+        ],
+        en: [
+          "Defining and implementing the Flutter architecture (state management, navigation, persistence)",
+          "Technical mentoring and code review of the mobile team",
+          "Driving technology choices and best practices",
+        ],
+      },
+      stack: ["Flutter", "Dart", "Riverpod", "REST"],
+    },
     {
       title: { fr: "Développeur Mobile", en: "Mobile Developer" },
       company: "Victus",
-      period: { fr: "2025 — Présent", en: "2025 — Present" },
-      current: true,
+      period: { fr: "Nov. 2025 — Mars 2026", en: "Nov 2025 — Mar 2026" },
+      current: false,
       description: {
         fr: "Conception et développement d'applications mobiles cross-platform en Flutter, du prototype à la mise en production, en collaboration étroite avec les équipes design et backend.",
         en: "Design and development of cross-platform mobile applications in Flutter, from prototype to production, in close collaboration with design and backend teams.",
