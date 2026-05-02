@@ -213,14 +213,6 @@ function Hero({ D, t, L, lang }: { D: D; t: T; L: Loc; lang: Lang }) {
       </div>
       <div className="hero-inner hero-with-portrait">
         <div className="hero-text">
-          <Reveal className="hero-status">
-            <span className="status-dot" />
-            <span>{t.hero.available}</span>
-            <span className="status-sep">·</span>
-            <Icon name="map" size={13} />
-            <span>{D.identity.location}</span>
-          </Reveal>
-
           <h1 className="hero-name">
             <Reveal as="span" className="hero-line" delay={60}>
               <span className="hero-greeting">{lang === "fr" ? "Bonjour, je suis" : "Hi, I'm"}</span>
@@ -243,31 +235,9 @@ function Hero({ D, t, L, lang }: { D: D; t: T; L: Loc; lang: Lang }) {
           </Reveal>
 
           <Reveal as="div" className="hero-ctas" delay={380}>
-            <a href="#projects" className="btn btn-primary">
-              <span>{t.cta.viewProjects}</span>
-              <Icon name="arrow-right" size={16} />
-            </a>
-            <a href="#contact" className="btn btn-ghost">
-              <Icon name="mail" size={16} />
-              <span>{t.cta.contact}</span>
-            </a>
-            <a href={D.contact.cvUrl} target="_blank" rel="noopener noreferrer" className="btn btn-link">
+            <a href={D.contact.cvUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
               <Icon name="download" size={15} />
               <span>{t.cta.cv}</span>
-            </a>
-          </Reveal>
-
-          <Reveal as="div" className="hero-meta" delay={460}>
-            <a href={D.contact.githubUrl} target="_blank" rel="noopener noreferrer" className="hero-meta-link">
-              <Icon name="github" size={15} /> <span>github.com/{D.contact.github}</span>
-            </a>
-            <span className="hero-meta-sep">·</span>
-            <a href={D.contact.linkedinUrl} target="_blank" rel="noopener noreferrer" className="hero-meta-link">
-              <Icon name="linkedin" size={15} /> <span>LinkedIn</span>
-            </a>
-            <span className="hero-meta-sep">·</span>
-            <a href={`mailto:${D.contact.email}`} className="hero-meta-link">
-              <Icon name="mail" size={15} /> <span>{D.contact.email}</span>
             </a>
           </Reveal>
         </div>
@@ -285,11 +255,11 @@ function Hero({ D, t, L, lang }: { D: D; t: T; L: Loc; lang: Lang }) {
           </div>
           <div className="hero-portrait-badge">
             <Icon name="spark" size={14} />
-            <span>{lang === "fr" ? "Développeur Mobile" : "Mobile Developer"}</span>
+            <span>{lang === "fr" ? "Lead Flutter Dev" : "Lead Flutter Dev"}</span>
           </div>
           <div className="hero-portrait-card hero-portrait-card-1">
             <div className="hpc-row">
-              <span className="hpc-emoji">⚡</span> Flutter
+              <Icon name="flutter" size={18} /> Flutter
             </div>
             <div className="hpc-meta">{lang === "fr" ? "Spécialité" : "Specialty"}</div>
           </div>

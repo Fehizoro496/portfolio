@@ -21,7 +21,8 @@ export type IconName =
   | "server"
   | "bolt"
   | "cap"
-  | "spark";
+  | "spark"
+  | "flutter";
 
 interface Props extends React.SVGAttributes<SVGSVGElement> {
   name: IconName;
@@ -88,6 +89,9 @@ export function Icon({ name, size = 18, ...rest }: Props) {
       return <svg {...props}><path d="M22 9L12 4 2 9l10 5 10-5z" /><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5" /></svg>;
     case "spark":
       return <svg {...props}><path d="M12 2v6M12 16v6M2 12h6M16 12h6M5 5l4 4M15 15l4 4M5 19l4-4M15 9l4-4" /></svg>;
+    case "flutter":
+      // eslint-disable-next-line @next/next/no-img-element
+      return <img src="/flutter_logo.svg" width={size} height={size} alt="Flutter" style={{ display: "inline-block", verticalAlign: "middle" }} />;
     default:
       return null;
   }
