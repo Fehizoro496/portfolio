@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(mkdir -p /tmp/design)",
+      "Bash(tar -xzf \"C:\\\\Users\\\\Bary\\\\.claude\\\\projects\\\\D--workspace-portfolio\\\\052b4f1d-7dae-41cf-b58c-fcb099adc77a\\\\tool-results\\\\webfetch-1777626322388-ftjmdc.bin\" -C /tmp/design)",
+      "Bash(cp \"/c/Users/Bary/.claude/projects/D--workspace-portfolio/052b4f1d-7dae-41cf-b58c-fcb099adc77a/tool-results/webfetch-1777626322388-ftjmdc.bin\" /tmp/design.tar.gz)",
+      "Bash(tar -xzf /tmp/design.tar.gz -C /tmp/design)",
+      "Bash(cp -r /tmp/design/portfolio /d/workspace/_design_source)",
+      "Read(//d/workspace/**)",
+      "Bash(npm --version)",
+      "Bash(mkdir -p /d/workspace/portfolio/app /d/workspace/portfolio/components /d/workspace/portfolio/lib /d/workspace/portfolio/public)",
+      "Bash(cp /d/workspace/_design_source/project/assets/portrait.png /d/workspace/portfolio/public/portrait.png)",
+      "Bash(cp /d/workspace/_design_source/project/assets/photo.png /d/workspace/portfolio/public/photo.png)",
+      "Bash(npm install *)",
+      "Bash(npx next *)",
+      "Bash(node -e \":*)",
+      "Bash(curl -s \"https://api.github.com/users/Fehizoro496\")",
+      "Bash(node -e \"const d=JSON.parse\\(require\\(''''fs''''\\).readFileSync\\(''''/dev/stdin'''',''''utf8''''\\)\\); console.log\\(JSON.stringify\\({public_repos:d.public_repos,followers:d.followers,following:d.following,created_at:d.created_at},null,2\\)\\)\")"
+    ]
+  }
+}
