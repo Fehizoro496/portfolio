@@ -6,9 +6,10 @@ import { PORTFOLIO_DATA } from "@/lib/data";
 import { I18N, localized } from "@/lib/i18n";
 import type { Lang } from "@/lib/types";
 import { PALETTES, type CardStyle, type PaletteName } from "@/lib/palettes";
+import { motion } from "framer-motion";
 import { Icon, type IconName } from "./Icon";
 import { Reveal, SectionHead } from "./Reveal";
-import { TweaksPanel, TweaksToggle } from "./TweaksPanel";
+import { AnimatedGrid } from "./AnimatedGrid";
 import type { GitHubStats } from "@/lib/github";
 
 const SECTION_IDS = ["hero", "about", "skills", "experience", "projects", "github", "education", "contact"] as const;
@@ -38,7 +39,7 @@ export function Portfolio({ githubStats }: { githubStats: GitHubStats }) {
   const [theme, setTheme] = useLocalStorage<"dark" | "light">("portfolio.theme", "dark");
   const [palette, setPalette] = useLocalStorage<PaletteName>("portfolio.palette", "Indigo / Violet");
   const [cardStyle, setCardStyle] = useLocalStorage<CardStyle>("portfolio.cardStyle", "Glass");
-  const [tweaksOpen, setTweaksOpen] = React.useState(false);
+
 
   React.useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -111,20 +112,6 @@ export function Portfolio({ githubStats }: { githubStats: GitHubStats }) {
         <Footer D={D} t={t} />
       </main>
 
-      <TweaksToggle onClick={() => setTweaksOpen((o) => !o)} />
-      <TweaksPanel
-        open={tweaksOpen}
-        onClose={() => setTweaksOpen(false)}
-        title={t.tweaks.title}
-        paletteLabel={t.tweaks.palette}
-        cardsLabel={t.tweaks.cards}
-        paletteOptions={t.tweaks.paletteOptions as readonly PaletteName[]}
-        cardOptions={t.tweaks.cardOptions as readonly CardStyle[]}
-        palette={palette}
-        cardStyle={cardStyle}
-        onPalette={setPalette}
-        onCard={setCardStyle}
-      />
     </>
   );
 }
@@ -206,40 +193,77 @@ function Hero({ D, t, L, lang }: { D: D; t: T; L: Loc; lang: Lang }) {
   return (
     <section id="hero" className="hero">
       <div className="hero-bg" aria-hidden>
-        <div className="hero-blob hero-blob-1" />
-        <div className="hero-blob hero-blob-2" />
-        <div className="hero-blob hero-blob-3" />
-        <div className="hero-grid" />
+        <motion.div
+          className="hero-blob hero-blob-1"
+          animate={{ scale: [1, 1.08, 1], x: [0, 24, 0], y: [0, -18, 0] }}
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="hero-blob hero-blob-2"
+          animate={{ scale: [1, 0.94, 1], x: [0, -20, 0], y: [0, 22, 0] }}
+          transition={{ duration: 22, repeat: Infinity, ease: "easeInOut", delay: 4 }}
+        />
+        <motion.div
+          className="hero-blob hero-blob-3"
+          animate={{ scale: [1, 1.06, 1], x: [0, 16, 0], y: [0, 14, 0] }}
+          transition={{ duration: 26, repeat: Infinity, ease: "easeInOut", delay: 9 }}
+        />
+        <AnimatedGrid />
       </div>
       <div className="hero-inner hero-with-portrait">
         <div className="hero-text">
           <h1 className="hero-name">
-            <Reveal as="span" className="hero-line" delay={60}>
+            <motion.span
+              className="hero-line"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+            >
               <span className="hero-greeting">{lang === "fr" ? "Bonjour, je suis" : "Hi, I'm"}</span>
-            </Reveal>
-            <Reveal as="span" className="hero-line hero-fullname" delay={140}>
+            </motion.span>
+            <motion.span
+              className="hero-line hero-fullname"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.22, ease: "easeOut" }}
+            >
               <span className="hero-first">{D.identity.firstName}</span>{" "}
               <span className="hero-last gradient-text">{D.identity.lastName}</span>
-            </Reveal>
+            </motion.span>
           </h1>
 
-          <Reveal as="div" className="hero-role" delay={220}>
+          <motion.div
+            className="hero-role"
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.36, ease: "easeOut" }}
+          >
             <span className="hero-role-dot" />
             <span>{L(D.identity.role)}</span>
             <span className="hero-role-sep">·</span>
             <span className="hero-role-stack">{D.identity.stack}</span>
-          </Reveal>
+          </motion.div>
 
-          <Reveal as="p" className="hero-tagline" delay={300}>
+          <motion.p
+            className="hero-tagline"
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.48, ease: "easeOut" }}
+          >
             {L(D.identity.tagline)}
-          </Reveal>
+          </motion.p>
 
-          <Reveal as="div" className="hero-ctas" delay={380}>
+          <motion.div
+            className="hero-ctas"
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+          >
             <a href={D.contact.cvUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
               <Icon name="download" size={15} />
               <span>{t.cta.cv}</span>
             </a>
-          </Reveal>
+          </motion.div>
         </div>
 
         <Reveal as="div" className="hero-portrait" delay={200}>
@@ -255,7 +279,7 @@ function Hero({ D, t, L, lang }: { D: D; t: T; L: Loc; lang: Lang }) {
           </div>
           <div className="hero-portrait-badge">
             <Icon name="spark" size={14} />
-            <span>{lang === "fr" ? "Lead Flutter Dev" : "Lead Flutter Dev"}</span>
+            <span>{"Flutter Dev"}</span>
           </div>
           <div className="hero-portrait-card hero-portrait-card-1">
             <div className="hpc-row">
@@ -272,10 +296,14 @@ function Hero({ D, t, L, lang }: { D: D; t: T; L: Loc; lang: Lang }) {
         </Reveal>
       </div>
 
-      <div className="hero-scroll" aria-hidden>
+      <button
+        className="hero-scroll"
+        aria-label="Scroll to next section"
+        onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
+      >
         <span>{t.hero.scroll}</span>
         <div className="hero-scroll-line" />
-      </div>
+      </button>
     </section>
   );
 }
