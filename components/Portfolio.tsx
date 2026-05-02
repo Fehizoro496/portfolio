@@ -639,7 +639,16 @@ function Education({ D, t, L }: { D: D; t: T; L: Loc }) {
 function Contact({ D, t, L }: { D: D; t: T; L: Loc }) {
   const [copied, setCopied] = React.useState(false);
   const onCopy = () => {
-    navigator.clipboard.writeText(D.contact.email).catch(() => { });
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(D.contact.email).catch(() => {});
+    } else {
+      const el = document.createElement("textarea");
+      el.value = D.contact.email;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand("copy");
+      document.body.removeChild(el);
+    }
     setCopied(true);
     window.setTimeout(() => setCopied(false), 1600);
   };

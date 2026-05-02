@@ -16,7 +16,8 @@
       "Bash(npx next *)",
       "Bash(node -e \":*)",
       "Bash(curl -s \"https://api.github.com/users/Fehizoro496\")",
-      "Bash(node -e \"const d=JSON.parse\\(require\\(''''fs''''\\).readFileSync\\(''''/dev/stdin'''',''''utf8''''\\)\\); console.log\\(JSON.stringify\\({public_repos:d.public_repos,followers:d.followers,following:d.following,created_at:d.created_at},null,2\\)\\)\")"
+      "Bash(node -e \"const d=JSON.parse\\(require\\(''''fs''''\\).readFileSync\\(''''/dev/stdin'''',''''utf8''''\\)\\); console.log\\(JSON.stringify\\({public_repos:d.public_repos,followers:d.followers,following:d.following,created_at:d.created_at},null,2\\)\\)\")",
+      "Bash(npm run:*)"
     ]
   }
 }
